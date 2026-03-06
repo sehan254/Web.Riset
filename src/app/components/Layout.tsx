@@ -50,9 +50,11 @@ export function Layout() {
               to="/"
               className="flex items-center gap-2 hover:opacity-90 transition-opacity"
             >
-              <div className="bg-orange-500 rounded-lg p-1.5">
-                <Mountain className="w-5 h-5 text-white" />
-              </div>
+              <img
+                src="/logo-nusapala.png"
+                alt="NUSAPALA"
+                className="h-10 w-10 object-contain"
+              />
               <div>
                 <span className="font-bold text-white text-lg leading-none block">
                   NUSAPALA
