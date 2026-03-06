@@ -125,7 +125,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Daki Lebih Aman
+              Mendaki Lebih Aman
               <br />
               <span className="text-orange-400">Dengan Teknologi AI</span>
             </h1>
