@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation, Outlet } from "react-router";
-import { Mountain, CloudSun, Brain, BookOpen, Menu, X, ChevronRight } from "lucide-react";
+import {
+  Mountain,
+  CloudSun,
+  Brain,
+  BookOpen,
+  Menu,
+  X,
+  ChevronRight,
+} from "lucide-react";
 
 export function Layout() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -8,10 +16,22 @@ export function Layout() {
 
   const navLinks = [
     { to: "/", label: "Beranda", icon: <Mountain className="w-4 h-4" /> },
-    { to: "/mountains", label: "Gunung", icon: <Mountain className="w-4 h-4" /> },
+    {
+      to: "/mountains",
+      label: "Gunung",
+      icon: <Mountain className="w-4 h-4" />,
+    },
     { to: "/weather", label: "Cuaca", icon: <CloudSun className="w-4 h-4" /> },
-    { to: "/ai-advisor", label: "AI Advisor", icon: <Brain className="w-4 h-4" /> },
-    { to: "/education", label: "Edukasi", icon: <BookOpen className="w-4 h-4" /> },
+    {
+      to: "/ai-advisor",
+      label: "AI Advisor",
+      icon: <Brain className="w-4 h-4" />,
+    },
+    {
+      to: "/education",
+      label: "Edukasi",
+      icon: <BookOpen className="w-4 h-4" />,
+    },
   ];
 
   const isActive = (to: string) => {
@@ -26,13 +46,20 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity">
+            <Link
+              to="/"
+              className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+            >
               <div className="bg-emerald-500 rounded-lg p-1.5">
                 <Mountain className="w-5 h-5 text-white" />
               </div>
               <div>
-                <span className="font-bold text-white text-lg leading-none block">PuncakNusantara</span>
-                <span className="text-emerald-300 text-xs leading-none">AI Hiking Advisor</span>
+                <span className="font-bold text-white text-lg leading-none block">
+                  NUSAPALA
+                </span>
+                <span className="text-emerald-300 text-xs leading-none">
+                  AI Hiking Advisor
+                </span>
               </div>
             </Link>
 
@@ -70,7 +97,11 @@ export function Layout() {
               className="md:hidden text-white p-2 rounded-lg hover:bg-green-800 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
@@ -120,10 +151,11 @@ export function Layout() {
                 <div className="bg-emerald-500 rounded-lg p-1.5">
                   <Mountain className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-bold text-lg">PuncakNusantara</span>
+                <span className="font-bold text-lg">NUSAPALA</span>
               </div>
               <p className="text-green-300 text-sm leading-relaxed">
-                Platform edukasi dan sistem rekomendasi pendakian gunung berbasis AI dan data cuaca realtime di Indonesia.
+                Platform edukasi dan sistem rekomendasi pendakian gunung
+                berbasis AI dan data cuaca realtime di Indonesia.
               </p>
             </div>
 
@@ -132,7 +164,10 @@ export function Layout() {
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.to}>
-                    <Link to={link.to} className="text-green-300 hover:text-white text-sm transition-colors">
+                    <Link
+                      to={link.to}
+                      className="text-green-300 hover:text-white text-sm transition-colors"
+                    >
                       {link.label}
                     </Link>
                   </li>
@@ -143,18 +178,25 @@ export function Layout() {
             <div>
               <h4 className="font-semibold mb-3 text-emerald-300">Gunung</h4>
               <ul className="space-y-2">
-                {["Gede", "Semeru", "Rinjani", "Kerinci", "Merbabu"].map((g) => (
-                  <li key={g}>
-                    <Link to={`/mountains/${g.toLowerCase()}`} className="text-green-300 hover:text-white text-sm transition-colors">
-                      Gunung {g}
-                    </Link>
-                  </li>
-                ))}
+                {["Gede", "Semeru", "Rinjani", "Kerinci", "Merbabu"].map(
+                  (g) => (
+                    <li key={g}>
+                      <Link
+                        to={`/mountains/${g.toLowerCase()}`}
+                        className="text-green-300 hover:text-white text-sm transition-colors"
+                      >
+                        Gunung {g}
+                      </Link>
+                    </li>
+                  ),
+                )}
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-emerald-300">Sumber Data</h4>
+              <h4 className="font-semibold mb-3 text-emerald-300">
+                Sumber Data
+              </h4>
               <ul className="space-y-2 text-green-300 text-sm">
                 <li>Badan Meteorologi, Klimatologi, dan Geofisika (BMKG)</li>
                 <li>Kementerian Lingkungan Hidup dan Kehutanan</li>
@@ -164,8 +206,12 @@ export function Layout() {
           </div>
 
           <div className="border-t border-green-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-green-400 text-sm">© 2026 PuncakNusantara. Dibuat untuk keselamatan para pendaki Indonesia.</p>
-            <p className="text-green-400 text-sm">Data cuaca bersumber dari BMKG · Pendakian bertanggung jawab</p>
+            <p className="text-green-400 text-sm">
+              © 2026 NUSAPALA. Dibuat untuk keselamatan para pendaki Indonesia.
+            </p>
+            <p className="text-green-400 text-sm">
+              Data cuaca bersumber dari BMKG · Pendakian bertanggung jawab
+            </p>
           </div>
         </div>
       </footer>
