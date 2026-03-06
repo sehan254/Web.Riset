@@ -1,60 +1,102 @@
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import {
-  Mountain, CloudSun, Brain, BookOpen, ChevronRight,
-  Shield, MapPin, Clock, TrendingUp, Star, AlertTriangle,
-  Users, Award, Compass
+  Mountain,
+  CloudSun,
+  Brain,
+  BookOpen,
+  ChevronRight,
+  Shield,
+  MapPin,
+  Clock,
+  TrendingUp,
+  Star,
+  AlertTriangle,
+  Users,
+  Award,
+  Compass,
 } from "lucide-react";
 import { mountains, getDifficultyColor } from "../data/mountains";
 
-const HERO_IMAGE = "https://images.unsplash.com/photo-1754948977336-2a166758a4aa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600";
-const GEAR_IMAGE = "https://images.unsplash.com/photo-1771849316197-2b1f3f49b651?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800";
-const WEATHER_IMAGE = "https://images.unsplash.com/photo-1570634078213-feda324d7ed2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800";
+const HERO_IMAGE = "/hero-bg.jpg";
+const GEAR_IMAGE =
+  "https://images.unsplash.com/photo-1771849316197-2b1f3f49b651?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800";
+const WEATHER_IMAGE =
+  "https://images.unsplash.com/photo-1570634078213-feda324d7ed2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800";
 
 const featuredMountains = mountains.slice(0, 4);
 
 const stats = [
-  { label: "Gunung Terdaftar", value: "8", icon: <Mountain className="w-6 h-6" /> },
-  { label: "Jalur Pendakian", value: "16+", icon: <Compass className="w-6 h-6" /> },
-  { label: "Data Cuaca Realtime", value: "24/7", icon: <CloudSun className="w-6 h-6" /> },
-  { label: "Rekomendasi AI", value: "Akurat", icon: <Brain className="w-6 h-6" /> },
+  {
+    label: "Gunung Terdaftar",
+    value: "8",
+    icon: <Mountain className="w-6 h-6" />,
+  },
+  {
+    label: "Jalur Pendakian",
+    value: "16+",
+    icon: <Compass className="w-6 h-6" />,
+  },
+  {
+    label: "Data Cuaca Realtime",
+    value: "24/7",
+    icon: <CloudSun className="w-6 h-6" />,
+  },
+  {
+    label: "Rekomendasi AI",
+    value: "Akurat",
+    icon: <Brain className="w-6 h-6" />,
+  },
 ];
 
 const features = [
   {
     icon: <Mountain className="w-8 h-8 text-emerald-600" />,
     title: "Informasi Gunung Lengkap",
-    description: "Data detail 8 gunung di kawasan taman nasional Indonesia, termasuk ekosistem, flora, fauna, dan karakteristik masing-masing gunung.",
+    description:
+      "Data detail 8 gunung di kawasan taman nasional Indonesia, termasuk ekosistem, flora, fauna, dan karakteristik masing-masing gunung.",
     link: "/mountains",
     linkText: "Lihat Semua Gunung",
   },
   {
     icon: <CloudSun className="w-8 h-8 text-blue-500" />,
     title: "Cuaca Realtime BMKG",
-    description: "Pantau kondisi cuaca gunung secara realtime berdasarkan data resmi BMKG. Suhu, kelembaban, angin, dan prediksi cuaca beberapa jam ke depan.",
+    description:
+      "Pantau kondisi cuaca gunung secara realtime berdasarkan data resmi BMKG. Suhu, kelembaban, angin, dan prediksi cuaca beberapa jam ke depan.",
     link: "/weather",
     linkText: "Cek Cuaca Sekarang",
   },
   {
     icon: <Brain className="w-8 h-8 text-purple-600" />,
     title: "AI Hiking Advisor",
-    description: "Sistem kecerdasan buatan yang menganalisis kondisi fisik, riwayat kesehatan, dan kondisi cuaca untuk memberikan rekomendasi pendakian yang dipersonalisasi.",
+    description:
+      "Sistem kecerdasan buatan yang menganalisis kondisi fisik, riwayat kesehatan, dan kondisi cuaca untuk memberikan rekomendasi pendakian yang dipersonalisasi.",
     link: "/ai-advisor",
     linkText: "Mulai Analisis AI",
   },
   {
     icon: <BookOpen className="w-8 h-8 text-amber-600" />,
     title: "Edukasi Pendakian",
-    description: "Pelajari teknik pendakian yang aman, manajemen logistik, navigasi alam bebas, penanganan darurat, dan etika pendakian yang bertanggung jawab.",
+    description:
+      "Pelajari teknik pendakian yang aman, manajemen logistik, navigasi alam bebas, penanganan darurat, dan etika pendakian yang bertanggung jawab.",
     link: "/education",
     linkText: "Belajar Sekarang",
   },
 ];
 
 const safetyTips = [
-  { icon: <Shield />, text: "Selalu daftarkan diri di pos registrasi basecamp" },
-  { icon: <CloudSun />, text: "Periksa kondisi cuaca sebelum memulai pendakian" },
-  { icon: <AlertTriangle />, text: "Jangan mendaki sendirian, selalu bawa tim" },
+  {
+    icon: <Shield />,
+    text: "Selalu daftarkan diri di pos registrasi basecamp",
+  },
+  {
+    icon: <CloudSun />,
+    text: "Periksa kondisi cuaca sebelum memulai pendakian",
+  },
+  {
+    icon: <AlertTriangle />,
+    text: "Jangan mendaki sendirian, selalu bawa tim",
+  },
   { icon: <Award />, text: "Bawa perlengkapan P3K dan survival yang lengkap" },
 ];
 
@@ -77,16 +119,21 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/40 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
               <Brain className="w-4 h-4 text-emerald-300" />
-              <span className="text-emerald-200 text-sm">Didukung Artificial Intelligence & Data BMKG</span>
+              <span className="text-emerald-200 text-sm">
+                Didukung Artificial Intelligence & Data BMKG
+              </span>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Daki Lebih Aman<br />
+              Daki Lebih Aman
+              <br />
               <span className="text-emerald-400">Dengan Teknologi AI</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Platform edukasi dan sistem rekomendasi pendakian gunung berbasis kecerdasan buatan dan data cuaca realtime BMKG untuk pendaki Indonesia.
+              Platform edukasi dan sistem rekomendasi pendakian gunung berbasis
+              kecerdasan buatan dan data cuaca realtime BMKG untuk pendaki
+              Indonesia.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -115,9 +162,16 @@ export default function Home() {
             className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
           >
             {stats.map((stat, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center">
-                <div className="text-emerald-300 flex justify-center mb-2">{stat.icon}</div>
-                <div className="text-3xl font-bold text-white">{stat.value}</div>
+              <div
+                key={i}
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center"
+              >
+                <div className="text-emerald-300 flex justify-center mb-2">
+                  {stat.icon}
+                </div>
+                <div className="text-3xl font-bold text-white">
+                  {stat.value}
+                </div>
                 <div className="text-green-200 text-sm mt-1">{stat.label}</div>
               </div>
             ))}
@@ -136,9 +190,12 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-green-900 mb-4">Fitur Unggulan Platform</h2>
+            <h2 className="text-4xl font-bold text-green-900 mb-4">
+              Fitur Unggulan Platform
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Semua yang Anda butuhkan untuk merencanakan pendakian yang aman dan berkesan.
+              Semua yang Anda butuhkan untuk merencanakan pendakian yang aman
+              dan berkesan.
             </p>
           </div>
 
@@ -153,8 +210,12 @@ export default function Home() {
                 className="bg-stone-50 border border-stone-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 group"
               >
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {feature.description}
+                </p>
                 <Link
                   to={feature.link}
                   className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium group-hover:gap-2 transition-all"
@@ -173,8 +234,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-bold text-green-900 mb-2">Gunung Pilihan</h2>
-              <p className="text-gray-600">Destinasi pendakian populer di Indonesia</p>
+              <h2 className="text-4xl font-bold text-green-900 mb-2">
+                Gunung Pilihan
+              </h2>
+              <p className="text-gray-600">
+                Destinasi pendakian populer di Indonesia
+              </p>
             </div>
             <Link
               to="/mountains"
@@ -205,13 +270,17 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-3 left-3">
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${getDifficultyColor(mountain.difficulty)}`}>
+                      <span
+                        className={`text-xs px-2 py-0.5 rounded-full font-medium ${getDifficultyColor(mountain.difficulty)}`}
+                      >
                         {mountain.difficulty}
                       </span>
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="font-bold text-gray-900 mb-1">{mountain.name}</h3>
+                    <h3 className="font-bold text-gray-900 mb-1">
+                      {mountain.name}
+                    </h3>
                     <div className="flex items-center gap-1 text-gray-500 text-sm mb-2">
                       <MapPin className="w-3.5 h-3.5" />
                       {mountain.province}
@@ -233,7 +302,10 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-8 sm:hidden">
-            <Link to="/mountains" className="inline-flex items-center gap-1 text-emerald-600 font-medium">
+            <Link
+              to="/mountains"
+              className="inline-flex items-center gap-1 text-emerald-600 font-medium"
+            >
               Lihat Semua Gunung <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
@@ -247,13 +319,20 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-6">
                 <Brain className="w-4 h-4 text-emerald-300" />
-                <span className="text-emerald-200 text-sm">AI Hiking Advisor</span>
+                <span className="text-emerald-200 text-sm">
+                  AI Hiking Advisor
+                </span>
               </div>
               <h2 className="text-4xl font-bold text-white mb-6">
-                Apakah Anda Siap<br />Mendaki Gunung?
+                Apakah Anda Siap
+                <br />
+                Mendaki Gunung?
               </h2>
               <p className="text-green-100 text-lg mb-8 leading-relaxed">
-                Sistem AI kami akan menganalisis kondisi fisik, riwayat kesehatan, dan pengalaman Anda, kemudian mencocokkannya dengan kondisi cuaca dan tingkat kesulitan jalur untuk memberikan rekomendasi yang tepat.
+                Sistem AI kami akan menganalisis kondisi fisik, riwayat
+                kesehatan, dan pengalaman Anda, kemudian mencocokkannya dengan
+                kondisi cuaca dan tingkat kesulitan jalur untuk memberikan
+                rekomendasi yang tepat.
               </p>
               <div className="space-y-3 mb-8">
                 {[
@@ -290,8 +369,12 @@ export default function Home() {
                     <Shield className="w-6 h-6 text-emerald-600" />
                   </div>
                   <div>
-                    <div className="font-bold text-gray-900 text-sm">Analisis Aman & Akurat</div>
-                    <div className="text-gray-500 text-xs">Berbasis data BMKG + AI</div>
+                    <div className="font-bold text-gray-900 text-sm">
+                      Analisis Aman & Akurat
+                    </div>
+                    <div className="text-gray-500 text-xs">
+                      Berbasis data BMKG + AI
+                    </div>
                   </div>
                 </div>
               </div>
@@ -322,10 +405,14 @@ export default function Home() {
                 <span className="text-blue-700 text-sm">Cuaca Realtime</span>
               </div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Pantau Cuaca Gunung<br />Sebelum Mendaki
+                Pantau Cuaca Gunung
+                <br />
+                Sebelum Mendaki
               </h2>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                Data cuaca realtime dari BMKG (Badan Meteorologi, Klimatologi, dan Geofisika) memastikan Anda mendapatkan informasi cuaca yang akurat dan terpercaya sebelum memulai pendakian.
+                Data cuaca realtime dari BMKG (Badan Meteorologi, Klimatologi,
+                dan Geofisika) memastikan Anda mendapatkan informasi cuaca yang
+                akurat dan terpercaya sebelum memulai pendakian.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
@@ -334,9 +421,14 @@ export default function Home() {
                   { label: "Kecepatan Angin", icon: "💨" },
                   { label: "Prediksi Hujan", icon: "🌧️" },
                 ].map((item, i) => (
-                  <div key={i} className="bg-stone-50 rounded-xl p-3 flex items-center gap-3">
+                  <div
+                    key={i}
+                    className="bg-stone-50 rounded-xl p-3 flex items-center gap-3"
+                  >
                     <span className="text-2xl">{item.icon}</span>
-                    <span className="text-gray-700 text-sm font-medium">{item.label}</span>
+                    <span className="text-gray-700 text-sm font-medium">
+                      {item.label}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -359,12 +451,19 @@ export default function Home() {
             <div className="bg-amber-100 rounded-lg p-2">
               <AlertTriangle className="w-6 h-6 text-amber-600" />
             </div>
-            <h2 className="text-2xl font-bold text-amber-900">Tips Keselamatan Pendakian</h2>
+            <h2 className="text-2xl font-bold text-amber-900">
+              Tips Keselamatan Pendakian
+            </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {safetyTips.map((tip, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white rounded-xl p-4 border border-amber-100">
-                <div className="text-amber-500 mt-0.5 flex-shrink-0">{tip.icon}</div>
+              <div
+                key={i}
+                className="flex items-start gap-3 bg-white rounded-xl p-4 border border-amber-100"
+              >
+                <div className="text-amber-500 mt-0.5 flex-shrink-0">
+                  {tip.icon}
+                </div>
                 <p className="text-gray-700 text-sm">{tip.text}</p>
               </div>
             ))}
@@ -375,9 +474,12 @@ export default function Home() {
       {/* Education Preview */}
       <section className="py-24 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-green-900 mb-4">Tingkatkan Pengetahuan Pendakian</h2>
+          <h2 className="text-4xl font-bold text-green-900 mb-4">
+            Tingkatkan Pengetahuan Pendakian
+          </h2>
           <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
-            Pelajari teknik pendakian yang aman dan bertanggung jawab melalui materi edukasi lengkap kami.
+            Pelajari teknik pendakian yang aman dan bertanggung jawab melalui
+            materi edukasi lengkap kami.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
             {[
@@ -388,9 +490,14 @@ export default function Home() {
               { emoji: "🩺", label: "Pertolongan Pertama" },
               { emoji: "🌿", label: "Etika Konservasi" },
             ].map((item, i) => (
-              <div key={i} className="bg-white rounded-xl p-4 border border-stone-200 flex items-center gap-3">
+              <div
+                key={i}
+                className="bg-white rounded-xl p-4 border border-stone-200 flex items-center gap-3"
+              >
                 <span className="text-3xl">{item.emoji}</span>
-                <span className="text-gray-700 font-medium text-sm">{item.label}</span>
+                <span className="text-gray-700 font-medium text-sm">
+                  {item.label}
+                </span>
               </div>
             ))}
           </div>
@@ -408,9 +515,12 @@ export default function Home() {
       <section className="py-16 bg-green-900 text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <Users className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
-          <h2 className="text-3xl font-bold mb-4">Bergabung dengan Komunitas Pendaki Indonesia</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Bergabung dengan Komunitas Pendaki Indonesia
+          </h2>
           <p className="text-green-200 text-lg mb-8">
-            Rencanakan pendakian Anda dengan lebih aman, terstruktur, dan berbasis data. Gunakan AI Advisor kami sekarang!
+            Rencanakan pendakian Anda dengan lebih aman, terstruktur, dan
+            berbasis data. Gunakan AI Advisor kami sekarang!
           </p>
           <Link
             to="/ai-advisor"
