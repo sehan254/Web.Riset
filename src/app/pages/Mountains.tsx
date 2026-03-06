@@ -25,12 +25,12 @@ export default function Mountains() {
   return (
     <div className="min-h-screen bg-stone-50">
       {/* Header */}
-      <div className="bg-green-900 text-white py-20">
+      <div className="bg-orange-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <Mountain className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
+            <Mountain className="w-12 h-12 text-orange-400 mx-auto mb-4" />
             <h1 className="text-5xl font-bold text-white mb-4">Gunung di Indonesia</h1>
-            <p className="text-green-200 text-xl max-w-2xl mx-auto">
+            <p className="text-orange-200 text-xl max-w-2xl mx-auto">
               Jelajahi 8 gunung pilihan di kawasan taman nasional Indonesia dengan informasi lengkap dan detail.
             </p>
           </motion.div>
@@ -49,7 +49,7 @@ export default function Mountains() {
                 placeholder="Cari gunung, provinsi, taman nasional..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-stone-50"
+                className="w-full pl-10 pr-4 py-2.5 border border-stone-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-stone-50"
               />
             </div>
 
@@ -63,7 +63,7 @@ export default function Mountains() {
                     onClick={() => setSelectedDifficulty(d)}
                     className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                       selectedDifficulty === d
-                        ? "bg-green-800 text-white"
+                        ? "bg-orange-800 text-white"
                         : "bg-stone-100 text-gray-600 hover:bg-stone-200"
                     }`}
                   >
@@ -80,7 +80,7 @@ export default function Mountains() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex items-center justify-between mb-6">
           <p className="text-gray-600">
-            Menampilkan <span className="font-semibold text-green-800">{filtered.length}</span> gunung
+            Menampilkan <span className="font-semibold text-orange-800">{filtered.length}</span> gunung
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export default function Mountains() {
               >
                 <Link
                   to={`/mountains/${mountain.id}`}
-                  className="block bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-lg hover:border-emerald-300 transition-all duration-300 group h-full"
+                  className="block bg-white rounded-2xl overflow-hidden shadow-sm border border-stone-200 hover:shadow-lg hover:border-orange-300 transition-all duration-300 group h-full"
                 >
                   {/* Image */}
                   <div className="relative h-52 overflow-hidden">
@@ -132,18 +132,18 @@ export default function Mountains() {
 
                   {/* Info */}
                   <div className="p-5">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-emerald-700 transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:text-orange-700 transition-colors">
                       {mountain.name}
                     </h3>
                     <div className="flex items-center gap-1 text-gray-500 text-sm mb-3">
-                      <MapPin className="w-3.5 h-3.5 text-emerald-500" />
+                      <MapPin className="w-3.5 h-3.5 text-orange-500" />
                       {mountain.province}
                     </div>
                     <p className="text-gray-600 text-sm mb-4 line-clamp-2">{mountain.description}</p>
 
                     <div className="border-t border-stone-100 pt-4 space-y-2">
                       <div className="flex items-center justify-between text-sm">
-                        <div className="flex items-center gap-1.5 text-emerald-700 font-semibold">
+                        <div className="flex items-center gap-1.5 text-orange-700 font-semibold">
                           <TrendingUp className="w-4 h-4" />
                           {mountain.elevation.toLocaleString()} mdpl
                         </div>
@@ -157,7 +157,7 @@ export default function Mountains() {
 
                     <div className="mt-4 flex items-center justify-between">
                       <span className="text-xs text-gray-400">{mountain.trails.length} jalur pendakian</span>
-                      <span className="text-emerald-600 text-sm flex items-center gap-0.5 group-hover:gap-1.5 transition-all">
+                      <span className="text-orange-600 text-sm flex items-center gap-0.5 group-hover:gap-1.5 transition-all">
                         Detail <ChevronRight className="w-3.5 h-3.5" />
                       </span>
                     </div>

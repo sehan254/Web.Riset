@@ -154,9 +154,9 @@ function analyzeHiker(data: FormData): AIResult {
 
   if (score >= 75) {
     level = "Siap";
-    color = "text-emerald-700";
-    bgColor = "bg-emerald-50 border-emerald-300";
-    icon = <CheckCircle className="w-8 h-8 text-emerald-600" />;
+    color = "text-orange-700";
+    bgColor = "bg-orange-50 border-orange-300";
+    icon = <CheckCircle className="w-8 h-8 text-orange-600" />;
     mountainRecommendations = mountains.map(m => m.name);
     avoidedMountains = [];
     timingAdvice = "Anda dapat mendaki kapan saja sesuai musim terbaik masing-masing gunung. Pendakian malam hari (summit attack) aman dilakukan dengan perlengkapan yang tepat.";
@@ -273,15 +273,15 @@ export default function AIAdvisor() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-stone-50 to-emerald-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-stone-50 to-orange-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-green-900 to-emerald-800 text-white py-16">
+      <div className="bg-gradient-to-r from-orange-900 to-orange-800 text-white py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-emerald-500/30 rounded-2xl mb-4">
-            <Brain className="w-8 h-8 text-emerald-300" />
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-500/30 rounded-2xl mb-4">
+            <Brain className="w-8 h-8 text-orange-300" />
           </div>
           <h1 className="text-4xl font-bold text-white mb-3">AI Hiking Advisor</h1>
-          <p className="text-green-200 text-lg max-w-2xl mx-auto">
+          <p className="text-orange-200 text-lg max-w-2xl mx-auto">
             Sistem kecerdasan buatan yang menganalisis kesiapan Anda untuk mendaki gunung berdasarkan kondisi fisik, riwayat kesehatan, dan pengalaman pendakian.
           </p>
         </div>
@@ -294,16 +294,16 @@ export default function AIAdvisor() {
             <div key={step.id} className="flex items-center">
               <div className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 currentStep === step.id
-                  ? "bg-green-800 text-white shadow-lg"
+                  ? "bg-orange-800 text-white shadow-lg"
                   : currentStep > step.id
-                  ? "bg-emerald-100 text-emerald-700"
+                  ? "bg-orange-100 text-orange-700"
                   : "bg-stone-200 text-gray-500"
               }`}>
                 {currentStep > step.id ? <CheckCircle className="w-4 h-4" /> : step.icon}
                 <span className="hidden sm:inline">{step.label}</span>
               </div>
               {i < steps.length - 1 && (
-                <div className={`w-8 h-0.5 mx-1 ${currentStep > step.id ? "bg-emerald-400" : "bg-stone-300"}`} />
+                <div className={`w-8 h-0.5 mx-1 ${currentStep > step.id ? "bg-orange-400" : "bg-stone-300"}`} />
               )}
             </div>
           ))}
@@ -336,7 +336,7 @@ export default function AIAdvisor() {
                     onChange={(e) => updateForm("usia", e.target.value)}
                     placeholder="Contoh: 25"
                     min="10" max="80"
-                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900 bg-stone-50"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-stone-50"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -348,7 +348,7 @@ export default function AIAdvisor() {
                       onChange={(e) => updateForm("tinggiBadan", e.target.value)}
                       placeholder="Contoh: 170"
                       min="140" max="220"
-                      className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900 bg-stone-50"
+                      className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-stone-50"
                     />
                   </div>
                   <div>
@@ -359,7 +359,7 @@ export default function AIAdvisor() {
                       onChange={(e) => updateForm("beratBadan", e.target.value)}
                       placeholder="Contoh: 65"
                       min="30" max="150"
-                      className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900 bg-stone-50"
+                      className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-stone-50"
                     />
                   </div>
                 </div>
@@ -390,7 +390,7 @@ export default function AIAdvisor() {
                 <button
                   onClick={() => setCurrentStep(2)}
                   disabled={!form.usia || !form.tinggiBadan || !form.beratBadan}
-                  className="flex items-center gap-2 bg-green-800 hover:bg-green-700 disabled:bg-stone-300 disabled:cursor-not-allowed text-white px-8 py-3 rounded-xl font-semibold transition-colors"
+                  className="flex items-center gap-2 bg-orange-800 hover:bg-orange-700 disabled:bg-stone-300 disabled:cursor-not-allowed text-white px-8 py-3 rounded-xl font-semibold transition-colors"
                 >
                   Selanjutnya <ChevronRight className="w-4 h-4" />
                 </button>
@@ -408,7 +408,7 @@ export default function AIAdvisor() {
               className="bg-white rounded-2xl shadow-sm border border-stone-200 p-8"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="bg-green-100 rounded-xl p-2.5"><Activity className="w-5 h-5 text-green-600" /></div>
+                <div className="bg-orange-100 rounded-xl p-2.5"><Activity className="w-5 h-5 text-orange-600" /></div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900">Pengalaman Pendakian</h2>
                   <p className="text-gray-500 text-sm">Riwayat pengalaman mendaki gunung Anda</p>
@@ -421,7 +421,7 @@ export default function AIAdvisor() {
                   <select
                     value={form.jumlahPendakian}
                     onChange={(e) => updateForm("jumlahPendakian", e.target.value)}
-                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900 bg-stone-50"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-stone-50"
                   >
                     <option value="">Pilih jumlah pendakian</option>
                     <option value="0">Belum pernah (Pemula)</option>
@@ -439,7 +439,7 @@ export default function AIAdvisor() {
                     value={form.gunungTertinggi}
                     onChange={(e) => updateForm("gunungTertinggi", e.target.value)}
                     placeholder="Contoh: Gunung Gede (2.958 mdpl) atau belum pernah"
-                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900 bg-stone-50"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-stone-50"
                   />
                 </div>
 
@@ -448,7 +448,7 @@ export default function AIAdvisor() {
                   <select
                     value={form.durasiTerlama}
                     onChange={(e) => updateForm("durasiTerlama", e.target.value)}
-                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900 bg-stone-50"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-stone-50"
                   >
                     <option value="">Pilih durasi</option>
                     <option value="0">Belum pernah</option>
@@ -465,7 +465,7 @@ export default function AIAdvisor() {
                   <select
                     value={form.targetGunung}
                     onChange={(e) => updateForm("targetGunung", e.target.value)}
-                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 text-gray-900 bg-stone-50"
+                    className="w-full px-4 py-3 border border-stone-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-gray-900 bg-stone-50"
                   >
                     <option value="">Pilih gunung tujuan</option>
                     {mountains.map(m => (
@@ -480,7 +480,7 @@ export default function AIAdvisor() {
                       const m = mountains.find(x => x.id === form.targetGunung);
                       return m ? (
                         <div className="flex items-center gap-3">
-                          <Mountain className="w-5 h-5 text-green-600" />
+                          <Mountain className="w-5 h-5 text-orange-600" />
                           <div>
                             <div className="font-medium text-gray-900">{m.name}</div>
                             <div className="text-gray-500 text-sm">{m.elevation.toLocaleString()} mdpl · {m.difficulty} · {m.estimatedTime}</div>
@@ -502,7 +502,7 @@ export default function AIAdvisor() {
                 <button
                   onClick={() => setCurrentStep(3)}
                   disabled={!form.jumlahPendakian || !form.durasiTerlama || !form.targetGunung}
-                  className="flex items-center gap-2 bg-green-800 hover:bg-green-700 disabled:bg-stone-300 disabled:cursor-not-allowed text-white px-8 py-3 rounded-xl font-semibold transition-colors"
+                  className="flex items-center gap-2 bg-orange-800 hover:bg-orange-700 disabled:bg-stone-300 disabled:cursor-not-allowed text-white px-8 py-3 rounded-xl font-semibold transition-colors"
                 >
                   Selanjutnya <ChevronRight className="w-4 h-4" />
                 </button>
@@ -564,7 +564,7 @@ export default function AIAdvisor() {
                 </button>
                 <button
                   onClick={handleAnalyze}
-                  className="flex items-center gap-2 bg-gradient-to-r from-green-800 to-emerald-700 hover:from-green-700 hover:to-emerald-600 text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-lg"
+                  className="flex items-center gap-2 bg-gradient-to-r from-orange-800 to-orange-700 hover:from-orange-700 hover:to-orange-600 text-white px-8 py-3 rounded-xl font-semibold transition-all shadow-lg"
                 >
                   {isAnalyzing ? (
                     <>
@@ -608,13 +608,13 @@ export default function AIAdvisor() {
                       initial={{ width: 0 }}
                       animate={{ width: `${result.score}%` }}
                       transition={{ duration: 1, ease: "easeOut" }}
-                      className={`h-full rounded-full ${result.score >= 75 ? "bg-emerald-500" : result.score >= 55 ? "bg-yellow-500" : result.score >= 35 ? "bg-orange-500" : "bg-red-500"}`}
+                      className={`h-full rounded-full ${result.score >= 75 ? "bg-orange-500" : result.score >= 55 ? "bg-yellow-500" : result.score >= 35 ? "bg-orange-500" : "bg-red-500"}`}
                     />
                   </div>
                 </div>
 
                 <div className="flex justify-center gap-4 text-sm">
-                  {[{ range: "75-100", label: "Siap", color: "bg-emerald-500" }, { range: "55-74", label: "Cukup Siap", color: "bg-yellow-500" }, { range: "35-54", label: "Perlu Persiapan", color: "bg-orange-500" }, { range: "0-34", label: "Tidak Disarankan", color: "bg-red-500" }].map((item, i) => (
+                  {[{ range: "75-100", label: "Siap", color: "bg-orange-500" }, { range: "55-74", label: "Cukup Siap", color: "bg-yellow-500" }, { range: "35-54", label: "Perlu Persiapan", color: "bg-orange-500" }, { range: "0-34", label: "Tidak Disarankan", color: "bg-red-500" }].map((item, i) => (
                     <div key={i} className="flex items-center gap-1.5">
                       <div className={`w-2.5 h-2.5 rounded-full ${item.color}`} />
                       <span className="text-gray-500 text-xs">{item.label}</span>
@@ -628,14 +628,14 @@ export default function AIAdvisor() {
                 const m = mountains.find(x => x.id === form.targetGunung);
                 const isRecommended = result.mountainRecommendations.includes(m?.name || "");
                 return m ? (
-                  <div className={`rounded-2xl border-2 p-6 ${isRecommended ? "bg-emerald-50 border-emerald-300" : "bg-red-50 border-red-300"}`}>
+                  <div className={`rounded-2xl border-2 p-6 ${isRecommended ? "bg-orange-50 border-orange-300" : "bg-red-50 border-red-300"}`}>
                     <h3 className="font-bold text-gray-900 mb-3">Analisis Gunung Tujuan</h3>
                     <div className="flex items-center gap-4 flex-wrap">
                       <img src={m.image} alt={m.name} className="w-20 h-16 object-cover rounded-xl" />
                       <div className="flex-1">
                         <div className="font-bold text-gray-900">{m.name}</div>
                         <div className="text-gray-500 text-sm">{m.elevation.toLocaleString()} mdpl · {m.difficulty}</div>
-                        <div className={`mt-2 inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-1 rounded-full ${isRecommended ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-700"}`}>
+                        <div className={`mt-2 inline-flex items-center gap-1.5 text-sm font-semibold px-3 py-1 rounded-full ${isRecommended ? "bg-orange-100 text-orange-700" : "bg-red-100 text-red-700"}`}>
                           {isRecommended ? <CheckCircle className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
                           {isRecommended ? "Direkomendasikan untuk Anda" : "Belum Direkomendasikan"}
                         </div>
@@ -666,13 +666,13 @@ export default function AIAdvisor() {
               {/* Mountain Recommendations */}
               <div className="bg-white rounded-2xl border border-stone-200 p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <Mountain className="w-5 h-5 text-emerald-600" />
+                  <Mountain className="w-5 h-5 text-orange-600" />
                   <h3 className="font-bold text-gray-900">Rekomendasi Jalur & Gunung</h3>
                 </div>
                 {result.mountainRecommendations.length > 0 ? (
                   <div className="flex flex-wrap gap-2 mb-4">
                     {result.mountainRecommendations.map((m, i) => (
-                      <span key={i} className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+                      <span key={i} className="bg-orange-50 text-orange-700 border border-orange-200 px-3 py-1 rounded-full text-sm flex items-center gap-1">
                         <CheckCircle className="w-3 h-3" /> {m}
                       </span>
                     ))}
@@ -722,14 +722,14 @@ export default function AIAdvisor() {
               {/* General Advice */}
               <div className="bg-white rounded-2xl border border-stone-200 p-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <Shield className="w-5 h-5 text-green-600" />
+                  <Shield className="w-5 h-5 text-orange-600" />
                   <h3 className="font-bold text-gray-900">Saran Umum</h3>
                 </div>
                 <div className="space-y-2">
                   {result.generalAdvice.map((advice, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-green-600 text-xs font-bold">{i + 1}</span>
+                      <div className="w-5 h-5 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-orange-600 text-xs font-bold">{i + 1}</span>
                       </div>
                       <p className="text-gray-700 text-sm">{advice}</p>
                     </div>
@@ -741,13 +741,13 @@ export default function AIAdvisor() {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={reset}
-                  className="flex items-center justify-center gap-2 flex-1 border-2 border-stone-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:border-green-500 transition-colors"
+                  className="flex items-center justify-center gap-2 flex-1 border-2 border-stone-300 text-gray-700 px-6 py-3 rounded-xl font-semibold hover:border-orange-500 transition-colors"
                 >
                   <RotateCcw className="w-4 h-4" /> Analisis Ulang
                 </button>
                 <Link
                   to="/mountains"
-                  className="flex items-center justify-center gap-2 flex-1 bg-green-800 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
+                  className="flex items-center justify-center gap-2 flex-1 bg-orange-800 hover:bg-orange-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
                 >
                   <Mountain className="w-4 h-4" /> Jelajahi Gunung <ArrowRight className="w-4 h-4" />
                 </Link>

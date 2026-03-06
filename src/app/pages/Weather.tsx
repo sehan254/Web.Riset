@@ -119,7 +119,7 @@ const conditionIcons: Record<string, string> = {
 };
 
 const statusConfig = {
-  Aman: { color: "text-emerald-700", bg: "bg-emerald-50 border-emerald-300", badge: "bg-emerald-100 text-emerald-700" },
+  Aman: { color: "text-orange-700", bg: "bg-orange-50 border-orange-300", badge: "bg-orange-100 text-orange-700" },
   Waspada: { color: "text-yellow-700", bg: "bg-yellow-50 border-yellow-300", badge: "bg-yellow-100 text-yellow-700" },
   Berbahaya: { color: "text-red-700", bg: "bg-red-50 border-red-300", badge: "bg-red-100 text-red-700" },
 };
@@ -168,7 +168,7 @@ export default function Weather() {
                       : "bg-stone-100 text-gray-600 hover:bg-stone-200"
                   }`}
                 >
-                  <span className={`w-2 h-2 rounded-full ${w.status === "Aman" ? "bg-emerald-400" : w.status === "Waspada" ? "bg-yellow-400" : "bg-red-500"}`} />
+                  <span className={`w-2 h-2 rounded-full ${w.status === "Aman" ? "bg-orange-400" : w.status === "Waspada" ? "bg-yellow-400" : "bg-red-500"}`} />
                   {m.name.replace("Gunung ", "")}
                 </button>
               );

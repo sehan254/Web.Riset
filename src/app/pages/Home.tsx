@@ -51,7 +51,7 @@ const stats = [
 
 const features = [
   {
-    icon: <Mountain className="w-8 h-8 text-emerald-600" />,
+    icon: <Mountain className="w-8 h-8 text-orange-600" />,
     title: "Informasi Gunung Lengkap",
     description:
       "Data detail 8 gunung di kawasan taman nasional Indonesia, termasuk ekosistem, flora, fauna, dan karakteristik masing-masing gunung.",
@@ -109,7 +109,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMAGE})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-green-900/70 via-green-900/50 to-green-900/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-orange-900/70 via-orange-900/50 to-orange-900/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-24">
           <motion.div
@@ -117,9 +117,9 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/40 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
-              <Brain className="w-4 h-4 text-emerald-300" />
-              <span className="text-emerald-200 text-sm">
+            <div className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/40 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
+              <Brain className="w-4 h-4 text-orange-300" />
+              <span className="text-orange-200 text-sm">
                 Didukung Artificial Intelligence & Data BMKG
               </span>
             </div>
@@ -127,10 +127,10 @@ export default function Home() {
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Daki Lebih Aman
               <br />
-              <span className="text-emerald-400">Dengan Teknologi AI</span>
+              <span className="text-orange-400">Dengan Teknologi AI</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-xl md:text-2xl text-orange-100 max-w-3xl mx-auto mb-10 leading-relaxed">
               Platform edukasi dan sistem rekomendasi pendakian gunung berbasis
               kecerdasan buatan dan data cuaca realtime BMKG untuk pendaki
               Indonesia.
@@ -139,7 +139,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/ai-advisor"
-                className="bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/40"
+                className="bg-orange-500 hover:bg-orange-400 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-orange-900/40"
               >
                 <Brain className="w-5 h-5" />
                 Mulai Analisis AI Saya
@@ -166,13 +166,13 @@ export default function Home() {
                 key={i}
                 className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4 text-center"
               >
-                <div className="text-emerald-300 flex justify-center mb-2">
+                <div className="text-orange-300 flex justify-center mb-2">
                   {stat.icon}
                 </div>
                 <div className="text-3xl font-bold text-white">
                   {stat.value}
                 </div>
-                <div className="text-green-200 text-sm mt-1">{stat.label}</div>
+                <div className="text-orange-200 text-sm mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -190,7 +190,7 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-green-900 mb-4">
+            <h2 className="text-4xl font-bold text-orange-900 mb-4">
               Fitur Unggulan Platform
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -218,7 +218,7 @@ export default function Home() {
                 </p>
                 <Link
                   to={feature.link}
-                  className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium group-hover:gap-2 transition-all"
+                  className="inline-flex items-center gap-1 text-orange-600 hover:text-orange-700 font-medium group-hover:gap-2 transition-all"
                 >
                   {feature.linkText}
                   <ChevronRight className="w-4 h-4" />
@@ -234,7 +234,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-12">
             <div>
-              <h2 className="text-4xl font-bold text-green-900 mb-2">
+              <h2 className="text-4xl font-bold text-orange-900 mb-2">
                 Gunung Pilihan
               </h2>
               <p className="text-gray-600">
@@ -243,7 +243,7 @@ export default function Home() {
             </div>
             <Link
               to="/mountains"
-              className="hidden sm:flex items-center gap-1 text-emerald-600 hover:text-emerald-700 font-medium"
+              className="hidden sm:flex items-center gap-1 text-orange-600 hover:text-orange-700 font-medium"
             >
               Lihat Semua <ChevronRight className="w-4 h-4" />
             </Link>
@@ -286,7 +286,7 @@ export default function Home() {
                       {mountain.province}
                     </div>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1 text-emerald-600 font-semibold text-sm">
+                      <div className="flex items-center gap-1 text-orange-600 font-semibold text-sm">
                         <TrendingUp className="w-3.5 h-3.5" />
                         {mountain.elevation.toLocaleString()} mdpl
                       </div>
@@ -304,7 +304,7 @@ export default function Home() {
           <div className="text-center mt-8 sm:hidden">
             <Link
               to="/mountains"
-              className="inline-flex items-center gap-1 text-emerald-600 font-medium"
+              className="inline-flex items-center gap-1 text-orange-600 font-medium"
             >
               Lihat Semua Gunung <ChevronRight className="w-4 h-4" />
             </Link>
@@ -313,13 +313,13 @@ export default function Home() {
       </section>
 
       {/* AI Advisor CTA */}
-      <section className="py-24 bg-gradient-to-br from-green-800 to-emerald-700 text-white">
+      <section className="py-24 bg-gradient-to-br from-orange-800 to-orange-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-6">
-                <Brain className="w-4 h-4 text-emerald-300" />
-                <span className="text-emerald-200 text-sm">
+                <Brain className="w-4 h-4 text-orange-300" />
+                <span className="text-orange-200 text-sm">
                   AI Hiking Advisor
                 </span>
               </div>
@@ -328,7 +328,7 @@ export default function Home() {
                 <br />
                 Mendaki Gunung?
               </h2>
-              <p className="text-green-100 text-lg mb-8 leading-relaxed">
+              <p className="text-orange-100 text-lg mb-8 leading-relaxed">
                 Sistem AI kami akan menganalisis kondisi fisik, riwayat
                 kesehatan, dan pengalaman Anda, kemudian mencocokkannya dengan
                 kondisi cuaca dan tingkat kesulitan jalur untuk memberikan
@@ -342,16 +342,16 @@ export default function Home() {
                   "Saran perlengkapan yang diperlukan",
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-emerald-400 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-5 h-5 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0">
                       <Star className="w-3 h-3 text-white" fill="white" />
                     </div>
-                    <span className="text-green-100">{item}</span>
+                    <span className="text-orange-100">{item}</span>
                   </div>
                 ))}
               </div>
               <Link
                 to="/ai-advisor"
-                className="inline-flex items-center gap-2 bg-white text-green-800 px-8 py-4 rounded-xl font-bold hover:bg-green-50 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-orange-800 px-8 py-4 rounded-xl font-bold hover:bg-orange-50 transition-colors"
               >
                 <Brain className="w-5 h-5" />
                 Mulai Analisis Gratis
@@ -365,8 +365,8 @@ export default function Home() {
               />
               <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl">
                 <div className="flex items-center gap-3">
-                  <div className="bg-emerald-100 rounded-lg p-2">
-                    <Shield className="w-6 h-6 text-emerald-600" />
+                  <div className="bg-orange-100 rounded-lg p-2">
+                    <Shield className="w-6 h-6 text-orange-600" />
                   </div>
                   <div>
                     <div className="font-bold text-gray-900 text-sm">
@@ -474,7 +474,7 @@ export default function Home() {
       {/* Education Preview */}
       <section className="py-24 bg-stone-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-green-900 mb-4">
+          <h2 className="text-4xl font-bold text-orange-900 mb-4">
             Tingkatkan Pengetahuan Pendakian
           </h2>
           <p className="text-gray-600 text-lg mb-12 max-w-2xl mx-auto">
@@ -503,7 +503,7 @@ export default function Home() {
           </div>
           <Link
             to="/education"
-            className="inline-flex items-center gap-2 bg-green-800 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
+            className="inline-flex items-center gap-2 bg-orange-800 hover:bg-orange-700 text-white px-8 py-4 rounded-xl font-semibold transition-colors"
           >
             <BookOpen className="w-5 h-5" />
             Mulai Belajar
@@ -512,19 +512,19 @@ export default function Home() {
       </section>
 
       {/* Users CTA */}
-      <section className="py-16 bg-green-900 text-white">
+      <section className="py-16 bg-orange-900 text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <Users className="w-12 h-12 text-emerald-400 mx-auto mb-4" />
+          <Users className="w-12 h-12 text-orange-400 mx-auto mb-4" />
           <h2 className="text-3xl font-bold mb-4">
             Bergabung dengan Komunitas Pendaki Indonesia
           </h2>
-          <p className="text-green-200 text-lg mb-8">
+          <p className="text-orange-200 text-lg mb-8">
             Rencanakan pendakian Anda dengan lebih aman, terstruktur, dan
             berbasis data. Gunakan AI Advisor kami sekarang!
           </p>
           <Link
             to="/ai-advisor"
-            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-8 py-4 rounded-xl font-bold text-lg transition-colors"
           >
             <Brain className="w-6 h-6" />
             Cek Kesiapan Saya

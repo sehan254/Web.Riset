@@ -42,7 +42,7 @@ export function Layout() {
   return (
     <div className="min-h-screen flex flex-col bg-stone-50">
       {/* Navbar */}
-      <nav className="bg-green-900 text-white shadow-lg sticky top-0 z-50">
+      <nav className="bg-orange-900 text-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -50,14 +50,14 @@ export function Layout() {
               to="/"
               className="flex items-center gap-2 hover:opacity-90 transition-opacity"
             >
-              <div className="bg-emerald-500 rounded-lg p-1.5">
+              <div className="bg-orange-500 rounded-lg p-1.5">
                 <Mountain className="w-5 h-5 text-white" />
               </div>
               <div>
                 <span className="font-bold text-white text-lg leading-none block">
                   NUSAPALA
                 </span>
-                <span className="text-emerald-300 text-xs leading-none">
+                <span className="text-orange-300 text-xs leading-none">
                   AI Hiking Advisor
                 </span>
               </div>
@@ -71,8 +71,8 @@ export function Layout() {
                   to={link.to}
                   className={`px-4 py-2 rounded-lg text-sm transition-all duration-200 flex items-center gap-1.5 ${
                     isActive(link.to)
-                      ? "bg-emerald-600 text-white"
-                      : "text-green-200 hover:bg-green-800 hover:text-white"
+                      ? "bg-orange-600 text-white"
+                      : "text-orange-200 hover:bg-orange-800 hover:text-white"
                   }`}
                 >
                   {link.icon}
@@ -85,7 +85,7 @@ export function Layout() {
             <div className="hidden md:flex items-center gap-3">
               <Link
                 to="/ai-advisor"
-                className="bg-emerald-500 hover:bg-emerald-400 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1.5"
+                className="bg-orange-500 hover:bg-orange-400 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-1.5"
               >
                 <Brain className="w-4 h-4" />
                 Mulai Analisis AI
@@ -94,7 +94,7 @@ export function Layout() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-white p-2 rounded-lg hover:bg-green-800 transition-colors"
+              className="md:hidden text-white p-2 rounded-lg hover:bg-orange-800 transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
               {mobileOpen ? (
@@ -108,7 +108,7 @@ export function Layout() {
 
         {/* Mobile Menu */}
         {mobileOpen && (
-          <div className="md:hidden bg-green-800 border-t border-green-700 px-4 py-3 space-y-1">
+          <div className="md:hidden bg-orange-800 border-t border-orange-700 px-4 py-3 space-y-1">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -116,8 +116,8 @@ export function Layout() {
                 onClick={() => setMobileOpen(false)}
                 className={`flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm transition-colors ${
                   isActive(link.to)
-                    ? "bg-emerald-600 text-white"
-                    : "text-green-200 hover:bg-green-700 hover:text-white"
+                    ? "bg-orange-600 text-white"
+                    : "text-orange-200 hover:bg-orange-700 hover:text-white"
                 }`}
               >
                 {link.icon}
@@ -128,7 +128,7 @@ export function Layout() {
             <Link
               to="/ai-advisor"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm bg-emerald-500 text-white mt-2"
+              className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm bg-orange-500 text-white mt-2"
             >
               <Brain className="w-4 h-4" />
               Mulai Analisis AI
@@ -143,12 +143,12 @@ export function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-green-900 text-white mt-auto">
+      <footer className="bg-orange-900 text-white mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="bg-emerald-500 rounded-lg p-1.5">
+                <div className="bg-orange-500 rounded-lg p-1.5">
                   <Mountain className="w-5 h-5 text-white" />
                 </div>
                 <span className="font-bold text-lg">NUSAPALA</span>
@@ -160,7 +160,7 @@ export function Layout() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-emerald-300">Navigasi</h4>
+              <h4 className="font-semibold mb-3 text-orange-300">Navigasi</h4>
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.to}>
@@ -176,7 +176,7 @@ export function Layout() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-emerald-300">Gunung</h4>
+              <h4 className="font-semibold mb-3 text-orange-300">Gunung</h4>
               <ul className="space-y-2">
                 {["Gede", "Semeru", "Rinjani", "Kerinci", "Merbabu"].map(
                   (g) => (
@@ -194,7 +194,7 @@ export function Layout() {
             </div>
 
             <div>
-              <h4 className="font-semibold mb-3 text-emerald-300">
+              <h4 className="font-semibold mb-3 text-orange-300">
                 Sumber Data
               </h4>
               <ul className="space-y-2 text-green-300 text-sm">
@@ -205,7 +205,7 @@ export function Layout() {
             </div>
           </div>
 
-          <div className="border-t border-green-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="border-t border-orange-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-green-400 text-sm">
               © 2026 NUSAPALA. Dibuat untuk keselamatan para pendaki Indonesia.
             </p>

@@ -32,11 +32,11 @@ const articles: Article[] = [
   {
     id: "physical-prep",
     category: "Persiapan Fisik",
-    categoryColor: "bg-emerald-100 text-emerald-700",
+    categoryColor: "bg-orange-100 text-orange-700",
     title: "Panduan Persiapan Fisik Sebelum Mendaki Gunung",
     summary: "Latihan fisik yang tepat dapat mengurangi risiko kelelahan, cedera, dan altitude sickness selama pendakian. Pelajari program latihan 8 minggu untuk mempersiapkan diri.",
     readTime: "8 menit",
-    icon: <Activity className="w-6 h-6 text-emerald-600" />,
+    icon: <Activity className="w-6 h-6 text-orange-600" />,
     image: GEAR_IMAGE,
     content: [
       {
@@ -237,18 +237,18 @@ export default function Education() {
             {selectedArticle.content.map((section, i) => (
               <div key={i} className="mb-8">
                 <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <span className="w-8 h-8 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-700 text-sm font-bold flex-shrink-0">{i + 1}</span>
+                  <span className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center text-orange-700 text-sm font-bold flex-shrink-0">{i + 1}</span>
                   {section.heading}
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">{section.body}</p>
                 {section.tips && (
-                  <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
-                    <div className="text-emerald-700 font-semibold text-sm mb-3">💡 Tips Penting:</div>
+                  <div className="bg-orange-50 rounded-xl p-4 border border-orange-100">
+                    <div className="text-orange-700 font-semibold text-sm mb-3">💡 Tips Penting:</div>
                     <ul className="space-y-2">
                       {section.tips.map((tip, j) => (
                         <li key={j} className="flex items-start gap-2">
-                          <CheckCircle className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-emerald-800 text-sm">{tip}</span>
+                          <CheckCircle className="w-4 h-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                          <span className="text-orange-800 text-sm">{tip}</span>
                         </li>
                       ))}
                     </ul>
@@ -275,11 +275,11 @@ export default function Education() {
   return (
     <div className="min-h-screen bg-stone-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-green-900 to-teal-800 text-white py-16">
+      <div className="bg-gradient-to-r from-orange-900 to-teal-800 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <BookOpen className="w-12 h-12 text-teal-300 mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-3">Edukasi Pendakian</h1>
-          <p className="text-green-200 text-lg max-w-2xl mx-auto">
+          <p className="text-orange-200 text-lg max-w-2xl mx-auto">
             Tingkatkan pengetahuan dan kesiapan Anda dengan materi edukasi lengkap tentang pendakian gunung yang aman dan bertanggung jawab.
           </p>
         </div>
@@ -296,7 +296,7 @@ export default function Education() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Cari artikel edukasi..."
-                className="w-full pl-10 pr-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-stone-50"
+                className="w-full pl-10 pr-4 py-2.5 border border-stone-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 bg-stone-50"
               />
             </div>
             <div className="flex flex-wrap gap-2">
@@ -306,7 +306,7 @@ export default function Education() {
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
                     selectedCategory === cat
-                      ? "bg-green-800 text-white"
+                      ? "bg-orange-800 text-white"
                       : "bg-stone-100 text-gray-600 hover:bg-stone-200"
                   }`}
                 >
@@ -320,7 +320,7 @@ export default function Education() {
         {/* Quick Summary Cards */}
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3 mb-10">
           {[
-            { emoji: "🏋️", label: "Persiapan Fisik", color: "bg-emerald-50 border-emerald-200" },
+            { emoji: "🏋️", label: "Persiapan Fisik", color: "bg-orange-50 border-orange-200" },
             { emoji: "🎒", label: "Logistik", color: "bg-blue-50 border-blue-200" },
             { emoji: "🧭", label: "Navigasi", color: "bg-purple-50 border-purple-200" },
             { emoji: "🚨", label: "Kedaruratan", color: "bg-red-50 border-red-200" },
@@ -370,10 +370,10 @@ export default function Education() {
                 </div>
                 <div className="flex items-start gap-3 mb-3">
                   <div className="flex-shrink-0 mt-0.5">{article.icon}</div>
-                  <h3 className="font-bold text-gray-900 group-hover:text-emerald-700 transition-colors">{article.title}</h3>
+                  <h3 className="font-bold text-gray-900 group-hover:text-orange-700 transition-colors">{article.title}</h3>
                 </div>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">{article.summary}</p>
-                <div className="flex items-center text-emerald-600 text-sm font-medium group-hover:gap-2 gap-1 transition-all">
+                <div className="flex items-center text-orange-600 text-sm font-medium group-hover:gap-2 gap-1 transition-all">
                   Baca Artikel <ChevronRight className="w-4 h-4" />
                 </div>
               </div>
@@ -390,10 +390,10 @@ export default function Education() {
         )}
 
         {/* Safety Banner */}
-        <div className="mt-12 bg-gradient-to-r from-green-800 to-emerald-700 rounded-2xl p-8 text-white text-center">
-          <Shield className="w-12 h-12 text-emerald-300 mx-auto mb-4" />
+        <div className="mt-12 bg-gradient-to-r from-orange-800 to-orange-700 rounded-2xl p-8 text-white text-center">
+          <Shield className="w-12 h-12 text-orange-300 mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-white mb-3">Keselamatan adalah Prioritas Utama</h3>
-          <p className="text-green-200 mb-6 max-w-xl mx-auto">
+          <p className="text-orange-200 mb-6 max-w-xl mx-auto">
             Pengetahuan adalah perlengkapan terpenting yang bisa Anda bawa. Pelajari semua materi edukasi ini sebelum memulai pendakian Anda.
           </p>
           <div className="flex flex-wrap justify-center gap-3">

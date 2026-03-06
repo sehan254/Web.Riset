@@ -66,7 +66,7 @@ export default function MountainDetail() {
                   </div>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">{mountain.name}</h1>
-                <div className="flex items-center gap-4 text-green-200 text-sm flex-wrap">
+                <div className="flex items-center gap-4 text-orange-200 text-sm flex-wrap">
                   <span className="flex items-center gap-1"><MapPin className="w-4 h-4" />{mountain.province}</span>
                   <span className="flex items-center gap-1"><TrendingUp className="w-4 h-4" />{mountain.elevation.toLocaleString()} mdpl</span>
                   <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{mountain.estimatedTime}</span>
@@ -74,7 +74,7 @@ export default function MountainDetail() {
               </div>
               <Link
                 to="/ai-advisor"
-                className="bg-emerald-500 hover:bg-emerald-400 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition-colors shadow-lg"
+                className="bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 transition-colors shadow-lg"
               >
                 <Brain className="w-5 h-5" />
                 Analisis Kesiapan AI
@@ -85,9 +85,9 @@ export default function MountainDetail() {
       </div>
 
       {/* Quick Stats */}
-      <div className="bg-green-900 text-white">
+      <div className="bg-orange-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-green-700">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-orange-700">
             {[
               { label: "Ketinggian", value: `${mountain.elevation.toLocaleString()} mdpl`, icon: <TrendingUp className="w-4 h-4" /> },
               { label: "Estimasi Waktu", value: mountain.estimatedTime, icon: <Clock className="w-4 h-4" /> },
@@ -95,7 +95,7 @@ export default function MountainDetail() {
               { label: "Jalur Tersedia", value: `${mountain.trails.length} Jalur`, icon: <Navigation className="w-4 h-4" /> },
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-3 px-6 py-4">
-                <div className="text-emerald-400">{item.icon}</div>
+                <div className="text-orange-400">{item.icon}</div>
                 <div>
                   <div className="text-green-300 text-xs">{item.label}</div>
                   <div className="text-white font-semibold text-sm">{item.value}</div>
@@ -116,7 +116,7 @@ export default function MountainDetail() {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-6 py-4 text-sm font-medium border-b-2 transition-colors whitespace-nowrap ${
                   activeTab === tab.id
-                    ? "border-emerald-600 text-emerald-700"
+                    ? "border-orange-600 text-orange-700"
                     : "border-transparent text-gray-500 hover:text-gray-700"
                 }`}
               >
@@ -151,12 +151,12 @@ export default function MountainDetail() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-2xl p-6 border border-stone-200">
                   <div className="flex items-center gap-2 mb-4">
-                    <Leaf className="w-5 h-5 text-emerald-600" />
+                    <Leaf className="w-5 h-5 text-orange-600" />
                     <h3 className="font-bold text-gray-900">Flora</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {mountain.flora.map((f, i) => (
-                      <span key={i} className="bg-emerald-50 text-emerald-700 text-sm px-3 py-1 rounded-full border border-emerald-200">
+                      <span key={i} className="bg-orange-50 text-orange-700 text-sm px-3 py-1 rounded-full border border-orange-200">
                         {f}
                       </span>
                     ))}
@@ -183,15 +183,15 @@ export default function MountainDetail() {
                 <div className="space-y-3">
                   {mountain.vegetationZones.map((zone, i) => (
                     <div key={i} className="flex items-center gap-3">
-                      <div className={`w-3 h-3 rounded-full flex-shrink-0 ${i === 0 ? "bg-green-400" : i === 1 ? "bg-green-600" : "bg-green-800"}`} />
+                      <div className={`w-3 h-3 rounded-full flex-shrink-0 ${i === 0 ? "bg-orange-400" : i === 1 ? "bg-orange-600" : "bg-orange-800"}`} />
                       <span className="text-gray-700 text-sm">{zone}</span>
                     </div>
                   ))}
                 </div>
                 <div className="mt-4 h-4 rounded-full overflow-hidden flex">
-                  <div className="flex-1 bg-green-400" />
-                  <div className="flex-1 bg-green-600" />
-                  <div className="flex-1 bg-green-800" />
+                  <div className="flex-1 bg-orange-400" />
+                  <div className="flex-1 bg-orange-600" />
+                  <div className="flex-1 bg-orange-800" />
                 </div>
                 <div className="flex justify-between text-xs text-gray-400 mt-1">
                   <span>Bawah</span>
@@ -223,15 +223,15 @@ export default function MountainDetail() {
                 </dl>
               </div>
 
-              <div className="bg-gradient-to-br from-green-800 to-emerald-700 rounded-2xl p-6 text-white">
-                <Brain className="w-8 h-8 text-emerald-300 mb-3" />
+              <div className="bg-gradient-to-br from-orange-800 to-orange-700 rounded-2xl p-6 text-white">
+                <Brain className="w-8 h-8 text-orange-300 mb-3" />
                 <h3 className="font-bold text-white mb-2">Cek Kesiapan Anda</h3>
-                <p className="text-green-200 text-sm mb-4">
+                <p className="text-orange-200 text-sm mb-4">
                   Gunakan AI Advisor untuk mengetahui apakah Anda siap mendaki {mountain.name}.
                 </p>
                 <Link
                   to="/ai-advisor"
-                  className="block bg-white text-green-800 text-center py-2.5 rounded-lg font-semibold text-sm hover:bg-green-50 transition-colors"
+                  className="block bg-white text-orange-800 text-center py-2.5 rounded-lg font-semibold text-sm hover:bg-orange-50 transition-colors"
                 >
                   Mulai Analisis AI
                 </Link>
@@ -251,8 +251,8 @@ export default function MountainDetail() {
                   onClick={() => setSelectedTrail(i)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     selectedTrail === i
-                      ? "bg-green-800 text-white"
-                      : "bg-white border border-stone-300 text-gray-600 hover:border-green-500"
+                      ? "bg-orange-800 text-white"
+                      : "bg-white border border-stone-300 text-gray-600 hover:border-orange-500"
                   }`}
                 >
                   {t.name}
@@ -317,7 +317,7 @@ export default function MountainDetail() {
                       <div key={i} className="p-5 flex gap-4">
                         <div className="flex flex-col items-center flex-shrink-0">
                           <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
-                            i === 0 ? "bg-emerald-100 text-emerald-700" :
+                            i === 0 ? "bg-orange-100 text-orange-700" :
                             i === trail.posts.length - 1 ? "bg-yellow-100 text-yellow-700" :
                             "bg-blue-100 text-blue-700"
                           }`}>
@@ -334,7 +334,7 @@ export default function MountainDetail() {
                               <p className="text-gray-500 text-sm mt-0.5">{post.description}</p>
                             </div>
                             <div className="text-right flex-shrink-0">
-                              <div className="text-emerald-700 font-semibold text-sm">{post.elevation.toLocaleString()} mdpl</div>
+                              <div className="text-orange-700 font-semibold text-sm">{post.elevation.toLocaleString()} mdpl</div>
                               {i > 0 && (
                                 <div className="text-gray-400 text-xs">{post.distanceFromPrev} km · {post.timeFromPrev} jam</div>
                               )}
@@ -347,7 +347,7 @@ export default function MountainDetail() {
                               </span>
                             )}
                             {post.hasCamping && (
-                              <span className="flex items-center gap-1 text-green-600 text-xs bg-green-50 px-2 py-0.5 rounded-full">
+                              <span className="flex items-center gap-1 text-orange-600 text-xs bg-orange-50 px-2 py-0.5 rounded-full">
                                 <Tent className="w-3 h-3" /> Area Berkemah
                               </span>
                             )}
@@ -366,7 +366,7 @@ export default function MountainDetail() {
                   <div className="space-y-2">
                     {[
                       { label: "Pos dengan Air", count: trail.posts.filter(p => p.hasWater).length, icon: <Droplet className="w-4 h-4 text-blue-500" />, color: "text-blue-600" },
-                      { label: "Area Berkemah", count: trail.posts.filter(p => p.hasCamping).length, icon: <Tent className="w-4 h-4 text-green-500" />, color: "text-green-600" },
+                      { label: "Area Berkemah", count: trail.posts.filter(p => p.hasCamping).length, icon: <Tent className="w-4 h-4 text-orange-500" />, color: "text-orange-600" },
                     ].map((item, i) => (
                       <div key={i} className="flex items-center justify-between py-2 border-b border-stone-100 last:border-0">
                         <div className="flex items-center gap-2">{item.icon}<span className="text-gray-600 text-sm">{item.label}</span></div>
@@ -467,7 +467,7 @@ export default function MountainDetail() {
                 <p className="text-gray-500 text-sm mt-1">Visualisasi jalur dan pos-pos pendakian</p>
               </div>
               {/* Interactive Map Visualization */}
-              <div className="relative bg-gradient-to-br from-green-100 via-emerald-50 to-teal-100 h-96 overflow-hidden">
+              <div className="relative bg-gradient-to-br from-orange-100 via-orange-50 to-teal-100 h-96 overflow-hidden">
                 {/* Terrain Background */}
                 <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 800 400">
                   <path d="M0,300 Q100,200 200,250 Q300,100 400,150 Q500,50 600,80 Q700,20 800,60 L800,400 L0,400Z" fill="#16a34a" />
@@ -501,7 +501,7 @@ export default function MountainDetail() {
                         style={{ left: `${(left / 800) * 100}%`, top: `${(top / 400) * 100}%` }}
                       >
                         <div className={`w-8 h-8 rounded-full border-2 border-white shadow-lg flex items-center justify-center text-sm cursor-pointer transition-transform group-hover:scale-125 ${
-                          i === 0 ? "bg-emerald-500" : i === arr.length - 1 ? "bg-yellow-500" : "bg-blue-500"
+                          i === 0 ? "bg-orange-500" : i === arr.length - 1 ? "bg-yellow-500" : "bg-blue-500"
                         }`}>
                           {i === 0 ? "🏕️" : i === arr.length - 1 ? "🏔️" : "📍"}
                         </div>
@@ -520,7 +520,7 @@ export default function MountainDetail() {
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur rounded-xl p-3 text-xs">
                   <div className="font-bold text-gray-700 mb-2">Legenda</div>
                   {[
-                    { color: "bg-emerald-500", label: "Basecamp" },
+                    { color: "bg-orange-500", label: "Basecamp" },
                     { color: "bg-blue-500", label: "Pos Pendakian" },
                     { color: "bg-yellow-500", label: "Puncak" },
                   ].map((item, i) => (
@@ -557,10 +557,10 @@ export default function MountainDetail() {
             <p className="text-gray-500 text-sm">Cek kesiapan Anda dengan AI Advisor kami</p>
           </div>
           <div className="flex gap-3">
-            <Link to="/weather" className="flex items-center gap-2 px-5 py-2.5 border border-stone-300 rounded-xl text-sm font-medium text-gray-700 hover:border-green-500 transition-colors">
+            <Link to="/weather" className="flex items-center gap-2 px-5 py-2.5 border border-stone-300 rounded-xl text-sm font-medium text-gray-700 hover:border-orange-500 transition-colors">
               <CloudSun className="w-4 h-4" /> Cek Cuaca
             </Link>
-            <Link to="/ai-advisor" className="flex items-center gap-2 px-5 py-2.5 bg-emerald-600 text-white rounded-xl text-sm font-medium hover:bg-emerald-700 transition-colors">
+            <Link to="/ai-advisor" className="flex items-center gap-2 px-5 py-2.5 bg-orange-600 text-white rounded-xl text-sm font-medium hover:bg-orange-700 transition-colors">
               <Brain className="w-4 h-4" /> Analisis AI <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
